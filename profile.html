@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CampusConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CampusConnect</span>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="notices.html" class="nav-item"><i class="fas fa-clipboard-list"></i><span>All Notices</span></a></li>
+                    <li><a href="events.html" class="nav-item"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+                    <li><a href="profile.html" class="nav-item active"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+                <h2 class="page-name">My Profile</h2>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+
+        <div class="profile-page">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-cover">
+                    <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=1200&h=300&fit=crop" alt="Cover">
+                    <button class="edit-cover"><i class="fas fa-camera"></i></button>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff&size=150" alt="Profile">
+                        <button class="edit-avatar"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="profile-details">
+                        <h1>Rahul Kumar</h1>
+                        <p class="profile-role">Student • Computer Science Engineering</p>
+                        <p class="profile-bio">Passionate about coding and technology. Hackathon enthusiast. Building the future one line at a time. 🚀</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Events Attended</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Certificates</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">25</span>
+                                <span class="stat-label">Bookmarks</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary"><i class="fas fa-edit"></i> Edit Profile</button>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <div class="profile-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="activity">Activity</button>
+                    <button class="tab-btn" data-tab="settings">Settings</button>
+                    <button class="tab-btn" data-tab="notifications">Notifications</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div class="tab-content active" id="overview">
+                    <div class="profile-grid">
+                        <div class="profile-card">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <span class="label">Full Name</span>
+                                    <span class="value">Rahul Kumar</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Email</span>
+                                    <span class="value">rahul.kumar@college.edu.in</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Phone</span>
+                                    <span class="value">+91 9876543210</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Date of Birth</span>
+                                    <span class="value">January 15, 2003</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card">
+                            <h3><i class="fas fa-graduation-cap"></i> Academic Information</h3>
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <span class="label">College</span>
+                                    <span class="value">IIT Delhi</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Department</span>
+                                    <span class="value">Computer Science & Engineering</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Roll Number</span>
+                                    <span class="value">2022CSE1234</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Year</span>
+                                    <span class="value">3rd Year (6th Semester)</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">CGPA</span>
+                                    <span class="value">8.75</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card">
+                            <h3><i class="fas fa-bookmark"></i> Subscribed Categories</h3>
+                            <div class="subscription-list">
+                                <label class="subscription-item">
+                                    <input type="checkbox" checked>
+                                    <span class="sub-icon academic"><i class="fas fa-book"></i></span>
+                                    <span>Academic</span>
+                                </label>
+                                <label class="subscription-item">
+                                    <input type="checkbox" checked>
+                                    <span class="sub-icon placements"><i class="fas fa-briefcase"></i></span>
+                                    <span>Placements</span>
+                                </label>
+                                <label class="subscription-item">
+                                    <input type="checkbox" checked>
+                                    <span class="sub-icon events"><i class="fas fa-calendar"></i></span>
+                                    <span>Events</span>
+                                </label>
+                                <label class="subscription-item">
+                                    <input type="checkbox">
+                                    <span class="sub-icon clubs"><i class="fas fa-users"></i></span>
+                                    <span>Club Activities</span>
+                                </label>
+                                <label class="subscription-item">
+                                    <input type="checkbox" checked>
+                                    <span class="sub-icon administrative"><i class="fas fa-building"></i></span>
+                                    <span>Administrative</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="profile-card">
+                            <h3><i class="fas fa-users"></i> Club Memberships</h3>
+                            <div class="clubs-list">
+                                <div class="club-item">
+                                    <div class="club-logo"><i class="fas fa-code"></i></div>
+                                    <div class="club-info">
+                                        <span class="club-name">Coding Club</span>
+                                        <span class="club-role">Member</span>
+                                    </div>
+                                </div>
+                                <div class="club-item">
+                                    <div class="club-logo"><i class="fas fa-robot"></i></div>
+                                    <div class="club-info">
+                                        <span class="club-name">Robotics Club</span>
+                                        <span class="club-role">Vice President</span>
+                                    </div>
+                                </div>
+                                <div class="club-item">
+                                    <div class="club-logo"><i class="fas fa-camera"></i></div>
+                                    <div class="club-info">
+                                        <span class="club-name">Photography Club</span>
+                                        <span class="club-role">Member</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-content" id="settings">
+                    <div class="settings-section">
+                        <h3>Notification Preferences</h3>
+                        <div class="settings-options">
+                            <label class="setting-item">
+                                <div class="setting-info">
+                                    <span class="setting-title">Push Notifications</span>
+                                    <span class="setting-desc">Receive instant push notifications for urgent notices</span>
+                                </div>
+                                <input type="checkbox" class="toggle-input" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <label class="setting-item">
+                                <div class="setting-info">
+                                    <span class="setting-title">Email Notifications</span>
+                                    <span class="setting-desc">Receive email alerts for important updates</span>
+                                </div>
+                                <input type="checkbox" class="toggle-input" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                            <label class="setting-item">
+                                <div class="setting-info">
+                                    <span class="setting-title">Daily Digest</span>
+                                    <span class="setting-desc">Get a daily summary of notices at 8 AM</span>
+                                </div>
+                                <input type="checkbox" class="toggle-input">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Appearance</h3>
+                        <div class="theme-options">
+                            <label class="theme-option active">
+                                <input type="radio" name="theme" value="light" checked>
+                                <div class="theme-preview light">
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <span>Light</span>
+                            </label>
+                            <label class="theme-option">
+                                <input type="radio" name="theme" value="dark">
+                                <div class="theme-preview dark">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <span>Dark</span>
+                            </label>
+                            <label class="theme-option">
+                                <input type="radio" name="theme" value="auto">
+                                <div class="theme-preview auto">
+                                    <i class="fas fa-adjust"></i>
+                                </div>
+                                <span>Auto</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section danger-zone">
+                        <h3>Danger Zone</h3>
+                        <div class="danger-actions">
+                            <button class="btn btn-outline danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout from all devices
+                            </button>
+                            <button class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Delete Account
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

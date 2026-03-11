@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CampusConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-left register-left">
+            <div class="auth-left-content">
+                <a href="index.html" class="auth-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CampusConnect</span>
+                </a>
+                <div class="auth-illustration">
+                    <div class="illustration-shapes">
+                        <div class="ill-shape ill-shape-1"></div>
+                        <div class="ill-shape ill-shape-2"></div>
+                        <div class="ill-shape ill-shape-3"></div>
+                    </div>
+                    <div class="illustration-content">
+                        <i class="fas fa-user-plus"></i>
+                        <h2>Join Your Campus</h2>
+                        <p>Create your account in minutes</p>
+                    </div>
+                </div>
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free for all students</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Instant access to notices</span>
+                    </div>
+                    <div class="auth-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Personalized dashboard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <div class="auth-form-header">
+                    <h1>Create Account</h1>
+                    <p>Fill in your details to get started</p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span>Personal</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span>College</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span>Security</span>
+                    </div>
+                </div>
+
+                <form class="auth-form multi-step-form" id="registerForm">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" data-step="1">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" placeholder="Enter first name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" placeholder="Enter last name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">College Email</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" placeholder="yourname@college.edu.in" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <span class="input-prefix">+91</span>
+                                <input type="tel" id="phone" placeholder="9876543210" required>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-block next-step">
+                            <span>Continue</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: College Information -->
+                    <div class="form-step" data-step="2">
+                        <div class="form-group">
+                            <label for="college">College/University</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-university"></i>
+                                <select id="college" required>
+                                    <option value="">Select your college</option>
+                                    <option value="iit-delhi">IIT Delhi</option>
+                                    <option value="iit-bombay">IIT Bombay</option>
+                                    <option value="nit-trichy">NIT Trichy</option>
+                                    <option value="bits-pilani">BITS Pilani</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-building"></i>
+                                    <select id="department" required>
+                                        <option value="">Select department</option>
+                                        <option value="cse">Computer Science</option>
+                                        <option value="ece">Electronics</option>
+                                        <option value="mech">Mechanical</option>
+                                        <option value="civil">Civil</option>
+                                        <option value="eee">Electrical</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-calendar"></i>
+                                    <select id="year" required>
+                                        <option value="">Select year</option>
+                                        <option value="1">1st Year</option>
+                                        <option value="2">2nd Year</option>
+                                        <option value="3">3rd Year</option>
+                                        <option value="4">4th Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rollNo">Roll Number</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="rollNo" placeholder="Enter roll number" required>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-outline prev-step">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="btn btn-primary next-step">
+                                <span>Continue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Security -->
+                    <div class="form-step" data-step="3">
+                        <div class="form-group">
+                            <label for="password">Create Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" placeholder="Create a strong password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="terms" required>
+                                <span class="checkmark"></span>
+                                <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                            </label>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-outline prev-step">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Create Account</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account? <a href="login.html">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CampusConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CampusConnect</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <span class="nav-section-title">Main</span>
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-item active">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notices.html" class="nav-item">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>All Notices</span>
+                            <span class="badge">12</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="events.html" class="nav-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
+                            <span class="badge success">5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendar.html" class="nav-item">
+                            <i class="fas fa-calendar-week"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <span class="nav-section-title">Categories</span>
+                <ul>
+                    <li>
+                        <a href="notices.html?category=academic" class="nav-item">
+                            <i class="fas fa-book"></i>
+                            <span>Academic</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notices.html?category=administrative" class="nav-item">
+                            <i class="fas fa-building"></i>
+                            <span>Administrative</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notices.html?category=placements" class="nav-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Placements</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notices.html?category=clubs" class="nav-item">
+                            <i class="fas fa-users"></i>
+                            <span>Club Activities</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <span class="nav-section-title">Personal</span>
+                <ul>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Bookmarked</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-history"></i>
+                            <span>Archive</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html" class="nav-item">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="user-name">Rahul Kumar</span>
+                    <span class="user-role">Student • CSE</span>
+                </div>
+                <button class="user-menu-btn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search notices, events...">
+                    <kbd>⌘K</kbd>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="header-btn notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <div class="header-dropdown">
+                    <button class="quick-add-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Quick Add</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="create-notice.html"><i class="fas fa-clipboard"></i> New Notice</a>
+                        <a href="create-event.html"><i class="fas fa-calendar-plus"></i> New Event</a>
+                    </div>
+                </div>
+                <div class="user-dropdown">
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff" alt="User">
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-text">
+                    <h1>Good Morning, Rahul! 👋</h1>
+                    <p>Here's what's happening in your campus today</p>
+                </div>
+                <div class="welcome-date">
+                    <i class="fas fa-calendar"></i>
+                    <span id="currentDate">Loading...</span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card gradient-1">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">New Notices</span>
+                    </div>
+                    <div class="stat-trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12%</span>
+                    </div>
+                </div>
+                <div class="stat-card gradient-2">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Upcoming Events</span>
+                    </div>
+                    <div class="stat-trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>5%</span>
+                    </div>
+                </div>
+                <div class="stat-card gradient-3">
+                    <div class="stat-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">15</span>
+                        <span class="stat-label">Bookmarked</span>
+                    </div>
+                    <div class="stat-trend">
+                        <i class="fas fa-minus"></i>
+                        <span>0%</span>
+                    </div>
+                </div>
+                <div class="stat-card gradient-4">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Deadlines Today</span>
+                    </div>
+                    <div class="stat-trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="dashboard-grid">
+                <!-- Urgent Notices -->
+                <div class="dashboard-card urgent-notices">
+                    <div class="card-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Urgent Notices</h2>
+                        <a href="notices.html?priority=urgent" class="view-all">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="notice-item urgent">
+                            <div class="notice-priority">
+                                <span class="priority-badge urgent">Urgent</span>
+                            </div>
+                            <div class="notice-content">
+                                <h3>End Semester Exam Schedule Released</h3>
+                                <p>The examination schedule for End Semester Exams (Dec 2025) has been released. Download from exam portal.</p>
+                                <div class="notice-meta">
+                                    <span><i class="fas fa-user"></i> Exam Cell</span>
+                                    <span><i class="fas fa-clock"></i> 2 hours ago</span>
+                                    <span class="category-tag academic">Academic</span>
+                                </div>
+                            </div>
+                            <div class="notice-actions">
+                                <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                                <button class="action-btn"><i class="fas fa-external-link-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="notice-item urgent">
+                            <div class="notice-priority">
+                                <span class="priority-badge urgent">Urgent</span>
+                            </div>
+                            <div class="notice-content">
+                                <h3>Fee Payment Deadline Extended</h3>
+                                <p>Last date for fee payment has been extended to 30th November 2025. Late fee will apply after this date.</p>
+                                <div class="notice-meta">
+                                    <span><i class="fas fa-user"></i> Accounts Office</span>
+                                    <span><i class="fas fa-clock"></i> 5 hours ago</span>
+                                    <span class="category-tag administrative">Administrative</span>
+                                </div>
+                            </div>
+                            <div class="notice-actions">
+                                <button class="action-btn bookmark"><i class="far fa-bookmark"></i></button>
+                                <button class="action-btn"><i class="fas fa-external-link-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="dashboard-card upcoming-events">
+                    <div class="card-header">
+                        <h2><i class="fas fa-calendar-star"></i> Upcoming Events</h2>
+                        <a href="events.html" class="view-all">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>TechnoHack 2025</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Main Auditorium</p>
+                                <p><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM</p>
+                                <div class="event-tags">
+                                    <span class="tag">Hackathon</span>
+                                    <span class="tag">Tech</span>
+                                </div>
+                            </div>
+                            <div class="event-action">
+                                <button class="btn btn-primary btn-sm">Register</button>
+                                <span class="seats-left">45/100 seats</span>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">28</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Google Placement Drive</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Placement Cell</p>
+                                <p><i class="fas fa-clock"></i> 10:00 AM onwards</p>
+                                <div class="event-tags">
+                                    <span class="tag placement">Placement</span>
+                                </div>
+                            </div>
+                            <div class="event-action">
+                                <button class="btn btn-success btn-sm">Registered</button>
+                                <span class="seats-left">120/150 seats</span>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">02</span>
+                                <span class="month">DEC</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Annual Tech Fest - Techkriti</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Campus Wide</p>
+                                <p><i class="fas fa-clock"></i> All Day Event</p>
+                                <div class="event-tags">
+                                    <span class="tag">Festival</span>
+                                    <span class="tag">Cultural</span>
+                                </div>
+                            </div>
+                            <div class="event-action">
+                                <button class="btn btn-outline btn-sm">Details</button>
+                                <span class="seats-left">Open for all</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Notices Feed -->
+                <div class="dashboard-card recent-notices">
+                    <div class="card-header">
+                        <h2><i class="fas fa-stream"></i> Recent Notices</h2>
+                        <div class="filter-tabs">
+                            <button class="filter-tab active">All</button>
+                            <button class="filter-tab">Academic</button>
+                            <button class="filter-tab">Placements</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="notice-feed">
+                            <div class="feed-item">
+                                <div class="feed-icon academic">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="feed-content">
+                                    <h4>Assignment Submission Deadline</h4>
+                                    <p>Data Structures Assignment 3 due by 26th Nov</p>
+                                    <span class="feed-time">30 minutes ago</span>
+                                </div>
+                                <span class="priority-dot important"></span>
+                            </div>
+                            <div class="feed-item">
+                                <div class="feed-icon placement">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="feed-content">
+                                    <h4>Microsoft Interview Shortlist</h4>
+                                    <p>Shortlisted candidates for Microsoft round 2</p>
+                                    <span class="feed-time">1 hour ago</span>
+                                </div>
+                                <span class="priority-dot urgent"></span>
+                            </div>
+                            <div class="feed-item">
+                                <div class="feed-icon club">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="feed-content">
+                                    <h4>Photography Club Meeting</h4>
+                                    <p>Weekly meeting at Club Room, 5 PM today</p>
+                                    <span class="feed-time">2 hours ago</span>
+                                </div>
+                                <span class="priority-dot normal"></span>
+                            </div>
+                            <div class="feed-item">
+                                <div class="feed-icon administrative">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="feed-content">
+                                    <h4>Library Timing Change</h4>
+                                    <p>Library will remain open till 11 PM during exams</p>
+                                    <span class="feed-time">3 hours ago</span>
+                                </div>
+                                <span class="priority-dot normal"></span>
+                            </div>
+                            <div class="feed-item">
+                                <div class="feed-icon academic">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="feed-content">
+                                    <h4>Workshop on Machine Learning</h4>
+                                    <p>Free ML workshop by Google experts on 1st Dec</p>
+                                    <span class="feed-time">5 hours ago</span>
+                                </div>
+                                <span class="priority-dot important"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Calendar -->
+                <div class="dashboard-card mini-calendar">
+                    <div class="card-header">
+                        <h2><i class="fas fa-calendar"></i> Calendar</h2>
+                        <a href="calendar.html" class="view-all">Full View</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="calendar-widget">
+                            <div class="calendar-header">
+                                <button class="cal-nav"><i class="fas fa-chevron-left"></i></button>
+                                <span class="cal-month">November 2025</span>
+                                <button class="cal-nav"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-days">
+                                <span>Sun</span>
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                            </div>
+                            <div class="calendar-dates" id="calendarDates">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+                        <div class="calendar-events">
+                            <h4>Today's Schedule</h4>
+                            <div class="cal-event">
+                                <span class="event-time">09:00 AM</span>
+                                <span class="event-title">Data Structures Class</span>
+                            </div>
+                            <div class="cal-event">
+                                <span class="event-time">02:00 PM</span>
+                                <span class="event-title">Lab Practical</span>
+                            </div>
+                            <div class="cal-event">
+                                <span class="event-time">05:00 PM</span>
+                                <span class="event-title">Club Meeting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="dashboard-card quick-links">
+                    <div class="card-header">
+                        <h2><i class="fas fa-link"></i> Quick Links</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-links-grid">
+                            <a href="#" class="quick-link-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Results</span>
+                            </a>
+                            <a href="#" class="quick-link-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Syllabus</span>
+                            </a>
+                            <a href="#" class="quick-link-item">
+                                <i class="fas fa-book-open"></i>
+                                <span>Library</span>
+                            </a>
+                            <a href="#" class="quick-link-item">
+                                <i class="fas fa-wallet"></i>
+                                <span>Fee Portal</span>
+                            </a>
+                            <a href="#" class="quick-link-item">
+                                <i class="fas fa-id-badge"></i>
+                                <span>ID Card</span>
+                            </a>
+                            <a href="#" class="quick-link-item">
+                                <i class="fas fa-bus"></i>
+                                <span>Transport</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="mark-read">Mark all as read</button>
+        </div>
+        <div class="panel-content">
+            <div class="notification-item unread">
+                <div class="notif-icon urgent">
+                    <i class="fas fa-exclamation"></i>
+                </div>
+                <div class="notif-content">
+                    <p><strong>Exam Schedule</strong> has been posted for December 2025</p>
+                    <span class="notif-time">5 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="notif-icon success">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="notif-content">
+                    <p>Your registration for <strong>TechnoHack 2025</strong> is confirmed</p>
+                    <span class="notif-time">1 hour ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notif-icon info">
+                    <i class="fas fa-info"></i>
+                </div>
+                <div class="notif-content">
+                    <p>New placement notice from <strong>Amazon</strong></p>
+                    <span class="notif-time">2 hours ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <a href="#">View All Notifications</a>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

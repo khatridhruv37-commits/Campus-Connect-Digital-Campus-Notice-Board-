@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Notices - CampusConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Include Sidebar (same as dashboard) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CampusConnect</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <span class="nav-section-title">Main</span>
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="notices.html" class="nav-item active"><i class="fas fa-clipboard-list"></i><span>All Notices</span><span class="badge">12</span></a></li>
+                    <li><a href="events.html" class="nav-item"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+                    <li><a href="calendar.html" class="nav-item"><i class="fas fa-calendar-week"></i><span>Calendar</span></a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <span class="nav-section-title">Categories</span>
+                <ul>
+                    <li><a href="notices.html?category=academic" class="nav-item"><i class="fas fa-book"></i><span>Academic</span></a></li>
+                    <li><a href="notices.html?category=administrative" class="nav-item"><i class="fas fa-building"></i><span>Administrative</span></a></li>
+                    <li><a href="notices.html?category=placements" class="nav-item"><i class="fas fa-briefcase"></i><span>Placements</span></a></li>
+                    <li><a href="notices.html?category=clubs" class="nav-item"><i class="fas fa-users"></i><span>Club Activities</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="user-name">Rahul Kumar</span>
+                    <span class="user-role">Student • CSE</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search notices..." id="searchNotices">
+                    <kbd>⌘K</kbd>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <button class="header-btn notification-btn"><i class="fas fa-bell"></i><span class="notification-dot"></span></button>
+                <div class="user-dropdown">
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="page-title">
+                    <h1><i class="fas fa-clipboard-list"></i> All Notices</h1>
+                    <p>Browse and search through all campus notices</p>
+                </div>
+                <a href="create-notice.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Create Notice
+                </a>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="academic">Academic</option>
+                        <option value="administrative">Administrative</option>
+                        <option value="events">Events</option>
+                        <option value="placements">Placements</option>
+                        <option value="clubs">Club Activities</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Priority</label>
+                    <select class="filter-select" id="priorityFilter">
+                        <option value="">All Priorities</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="important">Important</option>
+                        <option value="normal">Normal</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Department</label>
+                    <select class="filter-select" id="deptFilter">
+                        <option value="">All Departments</option>
+                        <option value="cse">Computer Science</option>
+                        <option value="ece">Electronics</option>
+                        <option value="mech">Mechanical</option>
+                        <option value="civil">Civil</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Date Range</label>
+                    <input type="date" class="filter-input" id="dateFrom">
+                    <span>to</span>
+                    <input type="date" class="filter-input" id="dateTo">
+                </div>
+                <button class="btn btn-outline" id="clearFilters">
+                    <i class="fas fa-times"></i> Clear
+                </button>
+            </div>
+
+            <!-- View Toggle -->
+            <div class="view-controls">
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="list"><i class="fas fa-list"></i></button>
+                    <button class="view-btn" data-view="grid"><i class="fas fa-th-large"></i></button>
+                </div>
+                <div class="sort-control">
+                    <label>Sort by:</label>
+                    <select id="sortBy">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="priority">Priority</option>
+                        <option value="deadline">Deadline</option>
+                    </select>
+                </div>
+                <span class="results-count">Showing <strong>24</strong> notices</span>
+            </div>
+
+            <!-- Notices List -->
+            <div class="notices-container" id="noticesContainer">
+                <!-- Urgent Notice -->
+                <div class="notice-card urgent" data-category="academic" data-priority="urgent">
+                    <div class="notice-header">
+                        <span class="priority-badge urgent"><i class="fas fa-exclamation-triangle"></i> Urgent</span>
+                        <span class="category-badge academic"><i class="fas fa-book"></i> Academic</span>
+                        <div class="notice-actions-top">
+                            <button class="action-btn bookmark-btn" title="Bookmark"><i class="far fa-bookmark"></i></button>
+                            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="notice-body">
+                        <h2 class="notice-title">End Semester Examination Schedule - December 2025</h2>
+                        <p class="notice-excerpt">The detailed timetable for End Semester Examinations (December 2025) has been released. All students are required to check their exam dates and report to the examination hall 30 minutes before the scheduled time.</p>
+                        <div class="notice-attachment">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Exam_Schedule_Dec2025.pdf</span>
+                            <a href="#" class="download-link">Download</a>
+                        </div>
+                    </div>
+                    <div class="notice-footer">
+                        <div class="notice-meta">
+                            <span class="author"><i class="fas fa-user-tie"></i> Examination Cell</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 20, 2025</span>
+                            <span class="department"><i class="fas fa-building"></i> All Departments</span>
+                        </div>
+                        <div class="notice-expire">
+                            <i class="fas fa-clock"></i> Expires: Dec 15, 2025
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Notice -->
+                <div class="notice-card important" data-category="placements" data-priority="important">
+                    <div class="notice-header">
+                        <span class="priority-badge important"><i class="fas fa-star"></i> Important</span>
+                        <span class="category-badge placements"><i class="fas fa-briefcase"></i> Placements</span>
+                        <div class="notice-actions-top">
+                            <button class="action-btn bookmark-btn" title="Bookmark"><i class="far fa-bookmark"></i></button>
+                            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="notice-body">
+                        <h2 class="notice-title">Google India - Campus Recruitment Drive</h2>
+                        <p class="notice-excerpt">Google India will be conducting campus recruitment for Software Engineer positions. Eligible students from CSE and IT departments with CGPA above 7.5 are invited to apply. Registration deadline: November 25, 2025.</p>
+                        <div class="notice-tags">
+                            <span class="tag">Software Engineer</span>
+                            <span class="tag">Full-time</span>
+                            <span class="tag">On-campus</span>
+                        </div>
+                    </div>
+                    <div class="notice-footer">
+                        <div class="notice-meta">
+                            <span class="author"><i class="fas fa-user-tie"></i> Training & Placement Cell</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 19, 2025</span>
+                            <span class="department"><i class="fas fa-building"></i> CSE, IT</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Normal Notice -->
+                <div class="notice-card" data-category="administrative" data-priority="normal">
+                    <div class="notice-header">
+                        <span class="priority-badge normal"><i class="fas fa-info-circle"></i> Normal</span>
+                        <span class="category-badge administrative"><i class="fas fa-building"></i> Administrative</span>
+                        <div class="notice-actions-top">
+                            <button class="action-btn bookmark-btn" title="Bookmark"><i class="far fa-bookmark"></i></button>
+                            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="notice-body">
+                        <h2 class="notice-title">Library Extended Hours During Exam Period</h2>
+                        <p class="notice-excerpt">The Central Library will extend its operating hours during the examination period. The library will remain open from 7:00 AM to 11:00 PM starting November 25, 2025.</p>
+                    </div>
+                    <div class="notice-footer">
+                        <div class="notice-meta">
+                            <span class="author"><i class="fas fa-user-tie"></i> Library Admin</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 18, 2025</span>
+                            <span class="views"><i class="fas fa-eye"></i> 1,234 views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Club Notice -->
+                <div class="notice-card" data-category="clubs" data-priority="normal">
+                    <div class="notice-header">
+                        <span class="priority-badge normal"><i class="fas fa-info-circle"></i> Normal</span>
+                        <span class="category-badge clubs"><i class="fas fa-users"></i> Club Activity</span>
+                        <div class="notice-actions-top">
+                            <button class="action-btn bookmark-btn bookmarked" title="Bookmark"><i class="fas fa-bookmark"></i></button>
+                            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="notice-body">
+                        <h2 class="notice-title">Coding Club - Weekly Contest Announcement</h2>
+                        <p class="notice-excerpt">Join us for our weekly coding contest this Saturday at 3 PM. Problems will be based on Dynamic Programming and Graphs. Prizes worth ₹5,000 for top performers!</p>
+                        <div class="notice-image">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=200&fit=crop" alt="Coding Contest">
+                        </div>
+                    </div>
+                    <div class="notice-footer">
+                        <div class="notice-meta">
+                            <span class="author"><i class="fas fa-user-tie"></i> Coding Club</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 17, 2025</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Event Notice -->
+                <div class="notice-card" data-category="events" data-priority="important">
+                    <div class="notice-header">
+                        <span class="priority-badge important"><i class="fas fa-star"></i> Important</span>
+                        <span class="category-badge events"><i class="fas fa-calendar-star"></i> Event</span>
+                        <div class="notice-actions-top">
+                            <button class="action-btn bookmark-btn" title="Bookmark"><i class="far fa-bookmark"></i></button>
+                            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="notice-body">
+                        <h2 class="notice-title">Annual Tech Fest - Techkriti 2025</h2>
+                        <p class="notice-excerpt">Get ready for the biggest tech fest of the year! Three days of workshops, competitions, guest lectures, and entertainment. Early bird registration now open with 20% discount.</p>
+                        <div class="notice-image">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=200&fit=crop" alt="Tech Fest">
+                        </div>
+                    </div>
+                    <div class="notice-footer">
+                        <div class="notice-meta">
+                            <span class="author"><i class="fas fa-user-tie"></i> Techkriti Team</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 15, 2025</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Register Now</button>
+                    </div>
+                </div>
+
+                <!-- More notices... -->
+                <div class="notice-card" data-category="academic" data-priority="normal">
+                    <div class="notice-header">
+                        <span class="priority-badge normal"><i class="fas fa-info-circle"></i> Normal</span>
+                        <span class="category-badge academic"><i class="fas fa-book"></i> Academic</span>
+                        <div class="notice-actions-top">
+                            <button class="action-btn bookmark-btn" title="Bookmark"><i class="far fa-bookmark"></i></button>
+                            <button class="action-btn share-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="notice-body">
+                        <h2 class="notice-title">Workshop on Machine Learning with Python</h2>
+                        <p class="notice-excerpt">Department of CSE is organizing a 2-day workshop on Machine Learning using Python. Topics include supervised learning, neural networks, and practical implementation with TensorFlow.</p>
+                    </div>
+                    <div class="notice-footer">
+                        <div class="notice-meta">
+                            <span class="author"><i class="fas fa-user-tie"></i> HOD, CSE</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Nov 14, 2025</span>
+                        </div>
+                        <button class="btn btn-outline btn-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn">10</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

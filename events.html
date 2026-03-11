@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - CampusConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CampusConnect</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="notices.html" class="nav-item"><i class="fas fa-clipboard-list"></i><span>All Notices</span></a></li>
+                    <li><a href="events.html" class="nav-item active"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+                    <li><a href="calendar.html" class="nav-item"><i class="fas fa-calendar-week"></i><span>Calendar</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="user-name">Rahul Kumar</span>
+                    <span class="user-role">Student • CSE</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search events...">
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <button class="header-btn notification-btn"><i class="fas fa-bell"></i></button>
+                <div class="user-dropdown">
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Kumar&background=6366f1&color=fff" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1><i class="fas fa-calendar-alt"></i> Campus Events</h1>
+                    <p>Discover and register for upcoming events</p>
+                </div>
+                <a href="create-event.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Create Event
+                </a>
+            </div>
+
+            <!-- Event Tabs -->
+            <div class="event-tabs">
+                <button class="tab-btn active" data-tab="upcoming">
+                    <i class="fas fa-calendar-day"></i> Upcoming
+                </button>
+                <button class="tab-btn" data-tab="registered">
+                    <i class="fas fa-check-circle"></i> My Registrations
+                </button>
+                <button class="tab-btn" data-tab="past">
+                    <i class="fas fa-history"></i> Past Events
+                </button>
+            </div>
+
+            <!-- Featured Event Banner -->
+            <div class="featured-event">
+                <div class="featured-bg">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=400&fit=crop" alt="Featured Event">
+                    <div class="featured-overlay"></div>
+                </div>
+                <div class="featured-content">
+                    <span class="featured-badge"><i class="fas fa-star"></i> Featured Event</span>
+                    <h2>TechnoHack 2025</h2>
+                    <p>24-hour hackathon with prizes worth ₹5,00,000. Build innovative solutions for real-world problems!</p>
+                    <div class="featured-info">
+                        <span><i class="fas fa-calendar"></i> November 25-26, 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                        <span><i class="fas fa-users"></i> 45/100 Registered</span>
+                    </div>
+                    <div class="featured-actions">
+                        <button class="btn btn-white btn-lg">Register Now</button>
+                        <button class="btn btn-outline-white btn-lg">Learn More</button>
+                    </div>
+                </div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="count-value" id="days">05</span>
+                        <span class="count-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="count-value" id="hours">12</span>
+                        <span class="count-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="count-value" id="minutes">34</span>
+                        <span class="count-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="count-value" id="seconds">56</span>
+                        <span class="count-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Categories Filter -->
+            <div class="category-pills">
+                <button class="pill active">All</button>
+                <button class="pill">Hackathons</button>
+                <button class="pill">Workshops</button>
+                <button class="pill">Placements</button>
+                <button class="pill">Cultural</button>
+                <button class="pill">Sports</button>
+                <button class="pill">Club Events</button>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=200&fit=crop" alt="Event">
+                        <span class="event-type hackathon">Hackathon</span>
+                        <button class="event-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-badge">
+                            <span class="day">25</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <h3 class="event-title">TechnoHack 2025</h3>
+                        <p class="event-description">24-hour hackathon with amazing prizes and networking opportunities.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-seats">
+                                <div class="seats-bar">
+                                    <div class="seats-fill" style="width: 45%"></div>
+                                </div>
+                                <span>45/100 seats</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm">Register</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=200&fit=crop" alt="Event">
+                        <span class="event-type workshop">Workshop</span>
+                        <button class="event-favorite favorited"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-badge">
+                            <span class="day">27</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <h3 class="event-title">Machine Learning Workshop</h3>
+                        <p class="event-description">Learn ML fundamentals with hands-on projects and expert guidance.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lab Complex</span>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-seats">
+                                <div class="seats-bar">
+                                    <div class="seats-fill" style="width: 80%"></div>
+                                </div>
+                                <span>80/100 seats</span>
+                            </div>
+                            <button class="btn btn-success btn-sm">Registered</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1560523159-4a9692d222ef?w=400&h=200&fit=crop" alt="Event">
+                        <span class="event-type placement">Placement</span>
+                        <button class="event-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-badge">
+                            <span class="day">28</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <h3 class="event-title">Google Campus Recruitment</h3>
+                        <p class="event-description">Google India hiring for SWE roles. Eligible: CSE/IT with 7.5+ CGPA.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 10:00 AM onwards</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Placement Cell</span>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-seats">
+                                <div class="seats-bar">
+                                    <div class="seats-fill" style="width: 60%"></div>
+                                </div>
+                                <span>90/150 seats</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm">Apply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=200&fit=crop" alt="Event">
+                        <span class="event-type cultural">Cultural</span>
+                        <button class="event-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-badge">
+                            <span class="day">02</span>
+                            <span class="month">DEC</span>
+                        </div>
+                        <h3 class="event-title">Annual Cultural Fest - Oasis</h3>
+                        <p class="event-description">3 days of music, dance, drama and unlimited fun!</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> All Day Event</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Campus Wide</span>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-seats free">
+                                <span><i class="fas fa-unlock"></i> Free Entry</span>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 5 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=200&fit=crop" alt="Event">
+                        <span class="event-type club">Club Event</span>
+                        <button class="event-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-badge">
+                            <span class="day">30</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <h3 class="event-title">Photography Walk</h3>
+                        <p class="event-description">Explore campus photography with Photography Club.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 6:00 AM - 8:00 AM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Gate</span>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-seats">
+                                <div class="seats-bar">
+                                    <div class="seats-fill" style="width: 30%"></div>
+                                </div>
+                                <span>15/50 seats</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm">Join</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Card 6 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop" alt="Event">
+                        <span class="event-type sports">Sports</span>
+                        <button class="event-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date-badge">
+                            <span class="day">05</span>
+                            <span class="month">DEC</span>
+                        </div>
+                        <h3 class="event-title">Inter-College Cricket Tournament</h3>
+                        <p class="event-description">Annual cricket championship with teams from top colleges.</p>
+                        <div class="event-details">
+                            <span><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Sports Ground</span>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-seats">
+                                <div class="seats-bar">
+                                    <div class="seats-fill" style="width: 100%"></div>
+                                </div>
+                                <span class="full">Team Full</span>
+                            </div>
+                            <button class="btn btn-disabled btn-sm" disabled>Closed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more">
+                <button class="btn btn-outline btn-lg">
+                    <i class="fas fa-plus"></i> Load More Events
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Event Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content event-modal">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <!-- Event details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

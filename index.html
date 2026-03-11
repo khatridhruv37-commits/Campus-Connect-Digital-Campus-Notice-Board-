@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Digital Notice Board</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span class="loader-text">CampusConnect</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CampusConnect</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-fadeInUp">
+                    <i class="fas fa-star"></i>
+                    <span>India's #1 Campus Solution</span>
+                </div>
+                <h1 class="hero-title animate-fadeInUp delay-1">
+                    Transform Your <span class="gradient-text">Campus Communication</span>
+                </h1>
+                <p class="hero-subtitle animate-fadeInUp delay-2">
+                    A centralized digital notice board and event management system designed for modern Indian colleges. Never miss an important announcement again!
+                </p>
+                <div class="hero-buttons animate-fadeInUp delay-3">
+                    <a href="register.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket"></i>
+                        Start Free Trial
+                    </a>
+                    <a href="#demo" class="btn btn-glass btn-lg">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Demo
+                    </a>
+                </div>
+                <div class="hero-stats animate-fadeInUp delay-4">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="500">0</span>+
+                        <span class="stat-label">Colleges</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100000">0</span>+
+                        <span class="stat-label">Students</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1000000">0</span>+
+                        <span class="stat-label">Notices Posted</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-fadeInRight delay-2">
+                <div class="dashboard-preview">
+                    <div class="preview-header">
+                        <div class="preview-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="preview-title">Dashboard</span>
+                    </div>
+                    <div class="preview-content">
+                        <div class="preview-sidebar">
+                            <div class="sidebar-item active"></div>
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                        </div>
+                        <div class="preview-main">
+                            <div class="preview-card urgent"></div>
+                            <div class="preview-card"></div>
+                            <div class="preview-card"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card card-1 animate-float">
+                    <i class="fas fa-bell"></i>
+                    <span>New Exam Schedule Posted!</span>
+                </div>
+                <div class="floating-card card-2 animate-float-delay">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Hackathon Registration Open</span>
+                </div>
+                <div class="floating-card card-3 animate-float-delay-2">
+                    <i class="fas fa-trophy"></i>
+                    <span>Placement Drive Tomorrow</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Everything You Need for <span class="gradient-text">Smart Campus</span></h2>
+                <p class="section-subtitle">Powerful features designed to streamline campus communication and event management</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon gradient-1">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Role-Based Access</h3>
+                    <p>Admin, HOD, Faculty, Club Coordinator, and Student roles with specific permissions for posting and viewing notices.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon gradient-2">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Notice Categories</h3>
+                    <p>Academic, Administrative, Events, Placements, and Club Activities - all organized and easily accessible.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon gradient-3">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Rich Notice Creation</h3>
+                    <p>Create notices with rich text, attachments, priority levels, and expiry dates using our powerful editor.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon gradient-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Event Management</h3>
+                    <p>Create events with registration forms, seat limits, QR-based attendance, and real-time tracking.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon gradient-5">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Push Notifications</h3>
+                    <p>Instant notifications for urgent notices and daily digest emails for regular updates.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon gradient-6">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Advanced Search</h3>
+                    <p>Full-text search with filters by category, date, department, and priority for quick access.</p>
+                    <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Categories</span>
+                <h2 class="section-title">Organized <span class="gradient-text">Notice Categories</span></h2>
+            </div>
+            <div class="categories-slider">
+                <div class="category-card academic">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Academic</h3>
+                    <p>Exam schedules, results, syllabus updates</p>
+                    <span class="category-count">1,234 notices</span>
+                </div>
+                <div class="category-card administrative">
+                    <div class="category-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Administrative</h3>
+                    <p>Fee deadlines, holidays, circulars</p>
+                    <span class="category-count">856 notices</span>
+                </div>
+                <div class="category-card events">
+                    <div class="category-icon">
+                        <i class="fas fa-calendar-star"></i>
+                    </div>
+                    <h3>Events</h3>
+                    <p>Hackathons, fests, workshops</p>
+                    <span class="category-count">432 notices</span>
+                </div>
+                <div class="category-card placements">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Placements</h3>
+                    <p>Drive schedules, company visits</p>
+                    <span class="category-count">678 notices</span>
+                </div>
+                <div class="category-card clubs">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Club Activities</h3>
+                    <p>Club meetings, competitions</p>
+                    <span class="category-count">345 notices</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Process</span>
+                <h2 class="section-title">How <span class="gradient-text">It Works</span></h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Register Your College</h3>
+                        <p>Sign up with your college email and verify your institution</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Set Up Roles</h3>
+                        <p>Assign roles to faculty, HODs, and club coordinators</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Invite Students</h3>
+                        <p>Students join using college code or bulk import</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Start Posting</h3>
+                        <p>Create notices, events, and engage your campus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">Loved by <span class="gradient-text">Colleges</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"CampusConnect has revolutionized how we communicate with students. No more missed deadlines!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Sharma&background=6366f1&color=fff" alt="Dr. Sharma">
+                        <div>
+                            <h4>Dr. Rajesh Sharma</h4>
+                            <span>Principal, IIT Delhi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The event management feature with QR attendance is a game-changer. We've increased event participation by 300%!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=8b5cf6&color=fff" alt="Priya Patel">
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <span>Student Council President, NIT Trichy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Finally, a platform that understands Indian college needs. The placement notice feature is excellent!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Prof+Kumar&background=ec4899&color=fff" alt="Prof. Kumar">
+                        <div>
+                            <h4>Prof. Anil Kumar</h4>
+                            <span>TPO, BITS Pilani</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-background">
+            <div class="cta-shape-1"></div>
+            <div class="cta-shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Campus?</h2>
+                <p>Join 500+ colleges already using CampusConnect</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-white btn-lg">
+                        <i class="fas fa-rocket"></i>
+                        Get Started Free
+                    </a>
+                    <a href="#contact" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>CampusConnect</span>
+                        </a>
+                        <p>Empowering Indian colleges with smart digital solutions for better campus communication.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Integrations</a></li>
+                            <li><a href="#">Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">API Reference</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to our newsletter for updates</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 CampusConnect. Made with ❤️ for Indian Education</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
